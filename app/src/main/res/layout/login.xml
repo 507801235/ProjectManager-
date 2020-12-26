@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/LoginBar">
+
+            <TextView
+                style="@style/LoginTitle"
+                android:text="@string/title_account" />
+
+            <EditText
+                android:id="@+id/log_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LoginBar">
+
+            <TextView
+                style="@style/LoginTitle"
+                android:text="@string/title_password" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/log_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/prompt_password"
+                    android:inputType="textPassword" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LoginBar"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/keep_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/keep_state" />
+            <CheckBox
+                android:id="@+id/auto_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/auto_login" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_login"
+            style="@style/Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_login" />
+
+    </LinearLayout>
+
+</LinearLayout>

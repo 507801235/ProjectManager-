@@ -1,4 +1,5 @@
 <resources>
+    <drawable name="gray">#EDEDED</drawable>
     <string name="title_login">欢迎使用</string>
     <string name="app_name">ProjectManager</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -6,9 +7,27 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="login_login">登 录</string>
+    <string name="login_register">注 册</string>
+    <string name="title_account">账 号 :</string>
+    <string name="register_account">Email*</string>
+    <string name="title_password">密 码 :</string>
+    <string name="register_password">Password*</string>
+    <string name="keep_state">记住账号密码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="register_title">填写个人信息</string>
+    <string name="repeat_password">重 复 密 码 :</string>
+    <string name="title_nickname">昵 称 :</string>
+    <string name="register_nickname">Nickname</string>
+    <string name="title_cellphone">联 系 方 式 :</string>
+    <string name="register_phone_number">Phone Number</string>
+    <string name="title_job">职 位 :</string>
+    <string name="register_position">Position</string>
+    <string name="title_synopsis">个 人 简 介 :</string>
+    <string name="register_synopsis">Introduce yourself briefly !</string>
     <string name="create_project">创建项目</string>
-    <string name="add_contact">新增联系人</string>
-    <string name="navigation_my">个人中心</string>
+    <string name="add_contact">添加联系人</string>
+    <string name="navigation_my">我的</string>
     <string name="navigation_contact">联系人</string>
     <string name="navigation_home">动态</string>
     <string name="navigation_project">项目</string>
@@ -24,4 +43,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="create_project_title">填写项目信息</string>
+    <string name="project_name">项 目 名 称 :</string>
+    <string name="project_end_time">截 止 时 间 :</string>
+    <string name="project_plan">项 目 计 划 :</string>
+    <string name="project_synopsis">项 目 简 介 :</string>
+    <string name="hint_project_name">Project Name*</string>
+    <string name="hint_project_end_time">End Date*</string>
+    <string name="hint_project_plan">Introduce the project plan briefly !</string>
+    <string name="hint_project_synopsis">Introduce your project briefly !</string>
 </resources>

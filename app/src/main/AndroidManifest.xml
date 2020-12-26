@@ -2,17 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projectmanager">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
+        android:name=".model.GlobalData"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_pm"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_pm_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManager">
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".GetInfoActivity" />
+        <activity android:name=".GetTaskActivity" />
+        <activity android:name=".MemberDetailActivity" />
+        <activity android:name=".ProjectDetailActivity" />
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ProjectManager.NoActionBar">
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +29,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ProjectManager.NoActionBar"></activity>
+            android:theme="@style/Theme.ProjectManager.NoActionBar" />
+        <activity
+            android:name=".CreateProjectActivity"
+            android:label="@string/create_project" />
+        <activity
+            android:name=".AddContactActivity"
+            android:label="@string/add_contact" />
     </application>
 
 </manifest>

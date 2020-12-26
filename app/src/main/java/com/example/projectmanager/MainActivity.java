@@ -1,5 +1,8 @@
 package com.example.projectmanager;
 
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //修改页面背景色
+        Resources res = getResources();
+        Drawable drawable = res.getDrawable(R.drawable.gray);
+        this.getWindow().setBackgroundDrawable(drawable);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -89,6 +97,22 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch(item.getItemId()){
+            case R.id.create_project:{
+                Intent intent = new Intent(this, CreateProjectActivity.class);
+                this.startActivity(intent);
+                break;
+            }
+            case R.id.add_contact:{
+                Intent intent = new Intent(this, AddContactActivity.class);
+                this.startActivity(intent);
+                break;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setTabSelection(int index) {

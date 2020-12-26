@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/deep_green"
+                android:text="@string/register_title"/>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_account" />
+
+                <EditText
+                    android:id="@+id/et_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_account"
+                    android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_password" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_password"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/repeat_password" />
+
+                <EditText
+                    android:id="@+id/et_password_re"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_password"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_nickname" />
+
+                <EditText
+                    android:id="@+id/et_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_nickname"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_cellphone" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_phone_number"
+                    android:maxLength="11"
+                    android:inputType="phone" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_job" />
+
+                <EditText
+                    android:id="@+id/et_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/register_position"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/RegisterBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/title_synopsis" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <EditText
+                    android:id="@+id/et_synopsis"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="top"
+                    android:hint="@string/register_synopsis"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:padding="5dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_register"
+                style="@style/Button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/login_register" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

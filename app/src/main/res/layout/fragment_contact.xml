@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.contact.ContactFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_margin="10dp"
+            android:animationCache="false"
+            android:background="@drawable/search_bar"
+            android:inputType="textEmailAddress"
+            android:orientation="horizontal"
+            app:closeIcon="@drawable/ic_baseline_clear_24"
+            app:iconifiedByDefault="false"
+            app:queryHint="请输入用户账号"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="联系人" />
+        android:divider="@android:color/transparent"/>
 
-</FrameLayout>
+
+</LinearLayout>
