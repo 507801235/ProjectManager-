@@ -3,26 +3,21 @@ package com.example.projectmanager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.projectmanager.adapter.MemberAdapter;
-import com.example.projectmanager.model.Member;
-import com.example.projectmanager.model.Project;
+import com.example.projectmanager.activity.member.MemberDetailActivity;
+import com.example.projectmanager.adapter.ContactAdapter;
 import com.example.projectmanager.util.Check;
 import com.example.projectmanager.util.DatabaseManager;
 import com.example.projectmanager.util.NetCallBack;
@@ -62,7 +57,7 @@ public class AddContactActivity extends AppCompatActivity {
                     searchView.setQuery("",false);
                 }else{
                     ListView member_list = findViewById(R.id.list_view);
-                    Request.clientGet(AddContactActivity.this, "/account/" + et_account, new NetCallBack() {
+                    Request.clientGet( "/account/" + et_account, new NetCallBack() {
                         @Override
                         public void onMySuccess(JSONObject result) {
                             search_result.setVisibility(View.VISIBLE);
@@ -79,7 +74,7 @@ public class AddContactActivity extends AppCompatActivity {
                             columnList.add(1,account);
                             memberList.add(0,columnList);
                             System.out.println(memberList);
-                            MemberAdapter adapter = new MemberAdapter(AddContactActivity.this, memberList);
+                            ContactAdapter adapter = new ContactAdapter(AddContactActivity.this, memberList);
                             member_list.setAdapter(adapter);
                             member_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
@@ -92,7 +87,7 @@ public class AddContactActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
-                            adapter.setOnItemDeleteClickListener(new MemberAdapter.onItemAddListener() {
+                            adapter.setOnItemDeleteClickListener(new ContactAdapter.onItemAddListener() {
                                 @Override
                                 public void onAddClick(int position) {
                                     DatabaseManager.add(AddContactActivity.this, nickname, account);
@@ -102,7 +97,7 @@ public class AddContactActivity extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onMyFailure(String error) {
+                        public void onMyFailure(String error, String data) {
                             Toast.makeText(AddContactActivity.this, error, Toast.LENGTH_LONG).show();
                             searchView.setQuery("",false);
                         }
@@ -117,8 +112,6 @@ public class AddContactActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     private void initView() {
         searchView = (SearchView) findViewById(R.id.search);

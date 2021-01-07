@@ -59,12 +59,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/keep_state" />
-            <CheckBox
-                android:id="@+id/auto_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/auto_login" />
+<!--            <CheckBox-->
+<!--                android:id="@+id/auto_login"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/auto_login" />-->
         </LinearLayout>
 
         <Button

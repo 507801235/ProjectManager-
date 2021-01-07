@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 public class GlobalData extends Application {
+    private static GlobalData instance;
     private String token;
     private String username;
     private String password;
@@ -16,12 +17,32 @@ public class GlobalData extends Application {
     private String position;
     private String phoneNum;
     private String synopsis;
+    private String now_project_id;
+    private Integer now_task_id;
     private Integer uid;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         Fresco.initialize(this);
+    }
+
+    public static Context getGlobalData() {
+        return instance;
+    }
+
+    public Integer getNow_task_id() {
+        return now_task_id;
+    }
+
+    public void setNow_task_id(Integer now_task_id) {this.now_task_id = now_task_id;}
+
+    public String getNow_project_id() {
+        return now_project_id;
+    }
+    public void setNow_project_id(String now_project_id) {
+        this.now_project_id = now_project_id;
     }
 
     public static void save_account(JSONObject data, Context context) {

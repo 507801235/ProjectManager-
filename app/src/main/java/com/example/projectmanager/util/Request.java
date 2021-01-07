@@ -6,6 +6,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 
 import cz.msebera.android.httpclient.entity.StringEntity;
+import static com.example.projectmanager.model.GlobalData.getGlobalData;
 
 public abstract class Request {
     private static final String BASE_URL = "https://find-hdu.com/";
@@ -13,8 +14,8 @@ public abstract class Request {
     public static AsyncHttpClient client = new AsyncHttpClient();
 
 
-    public static void clientGet(Context context, String url, NetCallBack cb) {
-        GlobalData app = (GlobalData) context.getApplicationContext();
+    public static void clientGet(String url, NetCallBack cb) {
+        GlobalData app = (GlobalData) getGlobalData();
         client.addHeader("token", app.getToken());
         client.get(BASE_URL + url, cb);
     }

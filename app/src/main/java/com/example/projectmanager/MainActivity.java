@@ -5,27 +5,22 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
 
+import com.example.projectmanager.activity.project.CreateProjectActivity;
 import com.example.projectmanager.ui.contact.ContactFragment;
 import com.example.projectmanager.ui.home.HomeFragment;
 import com.example.projectmanager.ui.my.MyFragment;
 import com.example.projectmanager.ui.project.ProjectFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -74,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_project:
                     setTabSelection(1);
                     return true;
-                case R.id.navigation_contact:
-                    setTabSelection(2);
-                    return true;
+//                case R.id.navigation_contact:
+//                    setTabSelection(2);
+//                    return true;
                 case R.id.navigation_my:
                     setTabSelection(3);
                     return true;
@@ -88,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 

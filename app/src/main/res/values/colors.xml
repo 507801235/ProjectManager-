@@ -3,6 +3,8 @@
     <color name="light_green">#b5c4b1</color>
     <color name="mid_green">#7b8b6f</color>
     <color name="deep_green">#768264</color>
+    <color name="yellow">#FFD700</color>
+    <color name="red">#FF4500</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>

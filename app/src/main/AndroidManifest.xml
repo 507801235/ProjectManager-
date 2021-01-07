@@ -13,12 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_pm_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectManager">
-        <activity android:name=".AboutUsActivity"></activity>
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".GetInfoActivity" />
-        <activity android:name=".GetTaskActivity" />
-        <activity android:name=".MemberDetailActivity" />
-        <activity android:name=".ProjectDetailActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
@@ -33,11 +27,61 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.ProjectManager.NoActionBar" />
         <activity
-            android:name=".CreateProjectActivity"
+            android:name=".activity.project.CreateProjectActivity"
             android:label="@string/create_project" />
         <activity
             android:name=".AddContactActivity"
             android:label="@string/add_contact" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="@string/about_us" />
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/setting" />
+        <activity
+            android:name=".GetInfoActivity"
+            android:label="@string/info" />
+        <activity
+            android:name=".activity.member.MemberDetailActivity"
+            android:label="@string/member_detail" />
+        <activity
+            android:name=".activity.project.ProjectDetailActivity"
+            android:label="@string/project_detail"
+            android:theme="@style/Theme.ProjectManager.NoActionBar" />
+        <activity
+            android:name=".activity.project.EditProjectActivity"
+            android:label="@string/edit_project" />
+        <activity
+            android:name=".activity.member.InviteMemberActivity"
+            android:label="@string/invite_member" />
+        <activity
+            android:name=".activity.member.ProjectMemberActivity"
+            android:label="项目成员"
+            android:theme="@style/Theme.ProjectManager.NoActionBar" />
+        <activity
+            android:name=".activity.task.DoneTaskActivity"
+            android:label="我的任务" />
+        <activity
+            android:name=".activity.task.TaskDetailActivity"
+            android:label="任务详情"
+            android:theme="@style/Theme.ProjectManager.NoActionBar" />
+        <activity
+            android:name=".activity.task.ProjectTaskActivity"
+            android:label="我的任务" />
+        <activity
+            android:name=".activity.dynamic.ProjectDynamicActivity"
+            android:label="项目动态" />
+        <activity
+            android:name=".activity.task.CreateTaskActivity"
+            android:label="发布任务" />
+        <activity
+            android:name=".activity.task.ReportTaskActivity"
+            android:label="任务汇报" />
+        <activity
+            android:name=".NotifyActivity"
+            android:label="通知" />
+        <activity android:name=".activity.task.TaskReportActivity"
+            android:label="任务汇报"/>
     </application>
 
 </manifest>

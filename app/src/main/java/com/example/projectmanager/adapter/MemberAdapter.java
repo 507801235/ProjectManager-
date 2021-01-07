@@ -1,36 +1,36 @@
 package com.example.projectmanager.adapter;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.projectmanager.R;
 import com.example.projectmanager.model.Member;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.example.projectmanager.model.Project;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MemberAdapter extends BaseAdapter {
     Context context;
-    List<List<String>> memberList;
-    View.OnClickListener listener;        //定义点击事件
+    String product_id;
+    Boolean isManager;
+    List<Member> memberList;
 
-
-    public MemberAdapter(Context context, List<List<String>> memberList) {
+    public MemberAdapter(Context context, String product_id, Boolean isManager, List<Member> members) {
         this.context = context;
-        this.memberList = memberList;
+        this.product_id = product_id;
+        this.isManager = isManager;
+        this.memberList = members;
     }
+
 
     @Override
     public int getCount() {
-        System.out.println(this.memberList.size());
         return this.memberList.size();
     }
 
@@ -47,17 +47,26 @@ public class MemberAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(this.context);
-        View view = inflater.inflate(R.layout.contact_item, parent, false);
-        TextView nickname = (TextView)view.findViewById(R.id.nickname);
-        TextView account = (TextView)view.findViewById(R.id.account);
-        ImageView add = (ImageView)view.findViewById(R.id.add_image);
+        View view = inflater.inflate(R.layout.member_item, parent, false);
 
-        List<String> columnList = this.memberList.get(position);
-        System.out.println(columnList);
-        nickname.setText(columnList.get(0));
-        account.setText(columnList.get(1));
+        TextView nickname = view.findViewById(R.id.nickname);
+        TextView account = view.findViewById(R.id.account);
+        ImageView remove = (ImageView)view.findViewById(R.id.remove_image);
+        if(isManager){
+            remove.setVisibility(View.VISIBLE);
+        }
+//        SimpleDraweeView ivAvatar = view.findViewById(R.id.iv_avatar);
 
-        add.setOnClickListener(new View.OnClickListener() {
+        Member member = this.memberList.get(position);
+
+        nickname.setText(member.getName());
+        account.setText(member.getUsername());
+//        Uri uri = Uri.parse(member.getAvatarUrl());
+//        ivAvatar.setImageURI(uri);
+//
+//        ImageView btDelete = view.findViewById(R.id.member_delete_button);
+//        ImageView btShow = view.findViewById(R.id.member_personal_button);
+        remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mOnItemAddListener.onAddClick(position);
@@ -67,14 +76,13 @@ public class MemberAdapter extends BaseAdapter {
         return view;
     }
 
-    //添加联系人add_image的监听接口
     public interface onItemAddListener{
         void onAddClick(int position);
     }
 
-    private onItemAddListener mOnItemAddListener;
+    private MemberAdapter.onItemAddListener mOnItemAddListener;
 
-    public void setOnItemDeleteClickListener(onItemAddListener mOnItemAddListener) {
+    public void setOnItemDeleteClickListener(MemberAdapter.onItemAddListener mOnItemAddListener) {
         this.mOnItemAddListener = mOnItemAddListener;
     }
 }

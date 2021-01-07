@@ -37,13 +37,13 @@ public abstract class NetCallBack extends AsyncHttpResponseHandler {
                 onMySuccess(response);
             }
         } else {
-            onMyFailure(response.getString("msg"));
+            onMyFailure(response.getString("msg"), response.getString("data"));
         }
     }
 
     public abstract void onMySuccess(JSONObject result);
 
 
-    public abstract void onMyFailure(String error);
+    public abstract void onMyFailure(String error, String data);
 
 }

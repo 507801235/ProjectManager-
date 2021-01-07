@@ -1,8 +1,9 @@
-package com.example.projectmanager;
+package com.example.projectmanager.activity.project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.alibaba.fastjson.JSONObject;
+import com.example.projectmanager.R;
 import com.example.projectmanager.util.NetCallBack;
 import com.example.projectmanager.util.Request;
 
@@ -91,7 +92,7 @@ public class CreateProjectActivity extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onMyFailure(String error) {
+                        public void onMyFailure(String error, String data) {
                             Toast.makeText(CreateProjectActivity.this, error, Toast.LENGTH_LONG).show();
                         }
                     });

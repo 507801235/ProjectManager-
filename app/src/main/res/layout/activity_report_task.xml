@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activity.task.ReportTaskActivity"
+android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/mid_green"
+            android:text="任务汇报"/>
+
+        <LinearLayout style="@style/LoginBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="工 作 时 间 :" />
+
+            <EditText
+                android:id="@+id/work_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="2" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LoginBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="剩 余 工 时 :" />
+
+            <EditText
+                android:id="@+id/rest_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="任 务 状 态 :" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/task_state"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="未完成"
+                    android:textColor="@color/red"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="已完成"
+                    android:textColor="@color/mid_green"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="工 作 内 容 :" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/LoginBar">
+
+            <EditText
+                android:id="@+id/work_content"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/edit_text"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="5dp"
+                android:hint="@string/hint_task_plan"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/report_task"
+            style="@style/Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="提交" />
+    </LinearLayout>
+
+</LinearLayout>

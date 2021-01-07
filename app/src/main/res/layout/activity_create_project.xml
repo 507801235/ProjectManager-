@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateProjectActivity"
+    tools:context=".activity.project.CreateProjectActivity"
     android:orientation="vertical">
 
     <ScrollView

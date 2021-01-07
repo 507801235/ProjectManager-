@@ -92,13 +92,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        auto_login.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                is_auto_login = isChecked;
-
-            }
-        });
+//        auto_login.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                is_auto_login = isChecked;
+//
+//            }
+//        });
 
         et_account.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -195,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
 
                                     @Override
-                                    public void onMyFailure(String error) {
+                                    public void onMyFailure(String error, String data) {
                                         Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
                                     }
                                 });
@@ -254,7 +254,7 @@ public class LoginActivity extends AppCompatActivity {
                 final GlobalData app = (GlobalData) getApplication();
                 app.setToken(token);
                 GlobalData.save_account(result, LoginActivity.this);
-                Request.clientGet(LoginActivity.this, "account/" + login_account, new NetCallBack() {
+                Request.clientGet( "account/" + login_account, new NetCallBack() {
                     @Override
                     public void onMySuccess(JSONObject result) {
                         GlobalData.save_account(result, LoginActivity.this);
@@ -265,14 +265,14 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onMyFailure(String error) {
+                    public void onMyFailure(String error, String data) {
                         Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
                     }
                 });
             }
 
             @Override
-            public void onMyFailure(String error) {
+            public void onMyFailure(String error, String data) {
                 Toast.makeText(LoginActivity.this, error, Toast.LENGTH_LONG).show();
                 log_account.setText("");
                 log_password.setText("");
@@ -291,7 +291,7 @@ public class LoginActivity extends AppCompatActivity {
         log_account = (EditText) loginView.findViewById(R.id.log_account);
         log_password = (EditText) loginView.findViewById(R.id.log_password);
         keep_state = (CheckBox) loginView.findViewById(R.id.keep_state);
-        auto_login = (CheckBox) loginView.findViewById(R.id.auto_login);
+//        auto_login = (CheckBox) loginView.findViewById(R.id.auto_login);
         bt_login = (Button) loginView.findViewById(R.id.bt_login);
 
         et_account = (EditText) registerView.findViewById(R.id.et_account);

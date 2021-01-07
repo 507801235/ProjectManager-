@@ -1,7 +1,5 @@
 package com.example.projectmanager.ui.my;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +18,6 @@ import android.widget.TextView;
 
 import com.example.projectmanager.AboutUsActivity;
 import com.example.projectmanager.GetInfoActivity;
-import com.example.projectmanager.GetTaskActivity;
 import com.example.projectmanager.R;
 import com.example.projectmanager.SettingActivity;
 import com.example.projectmanager.model.GlobalData;
@@ -32,7 +29,7 @@ public class MyFragment extends Fragment {
     private SimpleDraweeView ivAvatar;
     private MyViewModel mViewModel;
     GlobalData app;
-    private static String[] title = {"我的任务", "个人信息", "账号设置", "关于我们"};
+    private static String[] title = {"个人信息", "账号设置", "关于我们"};
     public static MyFragment newInstance() {
         return new MyFragment();
     }
@@ -52,27 +49,20 @@ public class MyFragment extends Fragment {
         Uri uri = Uri.parse(app.getAvatarUrl());
         ivAvatar.setImageURI(uri);
         ListView menuList = root.findViewById(R.id.list_view);
-        menuList.setAdapter(new Myadapter());
+        menuList.setAdapter(new MyAdapter());
         menuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        getTask();
-                        break;
-
-                    case 1:
                         getInfo();
                         break;
-
-                    case 2:
+                    case 1:
                         setting();
                         break;
-
-                    case 3:
+                    case 2:
                         aboutUs();
                         break;
-
                     default: break;
                 }
             }
@@ -80,7 +70,7 @@ public class MyFragment extends Fragment {
         return root;
     }
 
-    private class Myadapter extends BaseAdapter {
+    private class MyAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
@@ -112,11 +102,6 @@ public class MyFragment extends Fragment {
         tv_nickname = (TextView) root.findViewById(R.id.nickname);
         tv_account = (TextView) root.findViewById(R.id.account);
         ivAvatar = (SimpleDraweeView) root.findViewById(R.id.iv_avatar);
-    }
-
-    private void getTask(){
-        Intent intent = new Intent(getActivity(), GetTaskActivity.class);
-        startActivity(intent);
     }
 
     private void getInfo(){

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.task.CreateTaskActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/mid_green"
+                android:text="@string/create_task_title"/>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/task_name" />
+
+                <EditText
+                    android:id="@+id/et_task_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:maxLength="10"
+                    android:hint="@string/hint_task_name" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/claim_username" />
+
+                <EditText
+                    android:id="@+id/claim_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:inputType="number"
+                    android:hint="@string/hint_claim_username" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="@string/task_start_time"/>
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:id="@+id/start_date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/hint_project_start_time" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="@string/task_end_time"/>
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:id="@+id/end_date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="@string/hint_project_end_time" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/task_hour" />
+
+                <EditText
+                    android:id="@+id/task_hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:maxLength="2"
+                    android:hint="预估工时"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/task_emergent" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/task_emergent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="普通"
+                        android:textColor="@color/mid_green"/>
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="紧急"
+                        android:textColor="@color/yellow"/>
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="加急"
+                        android:textColor="@color/red"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/RegisterTitle"
+                    android:text="@string/task_plan" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LoginBar">
+
+                <EditText
+                    android:id="@+id/et_task_plan"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:padding="5dp"
+                    android:hint="@string/hint_task_plan"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/create_task"
+                style="@style/Button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/create_task" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.task.TaskDetailActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.ProjectManager.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/Theme.ProjectManager.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/border"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/deep_green"
+            android:id="@+id/task_name"
+            android:text="任务名称"/>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/claim_username" />
+
+            <TextView
+                android:id="@+id/claim_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:textSize="18sp"
+                android:hint="土间埋(1010@qq.com)"
+                android:inputType="textEmailAddress" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/task_start_time"/>
+
+            <TextView
+                android:id="@+id/start_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:textSize="18sp"
+                android:hint="2020-10-24"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/task_end_time"/>
+
+            <TextView
+                android:id="@+id/end_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:textSize="18sp"
+                android:hint="2020-12-31" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/task_hour" />
+
+            <TextView
+                android:id="@+id/task_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="3"
+                android:textSize="18sp"
+                android:hint="2"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="剩 余 工 时 :" />
+
+            <TextView
+                android:id="@+id/rest_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="3"
+                android:textSize="18sp"
+                android:hint="2"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/task_emergent" />
+
+            <TextView
+                android:id="@+id/task_emergent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="3"
+                android:textSize="18sp"
+                android:hint="紧急"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="完 成 状 态 :" />
+
+            <TextView
+                android:id="@+id/task_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="3"
+                android:textSize="18sp"
+                android:hint="未完成"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="@string/task_plan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/task_plan"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/edit_text"
+                android:gravity="top"
+                android:hint="@string/hint_project_plan"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="5dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/report_task"
+            style="@style/Button"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="汇报任务" />
+
+    </LinearLayout>
+
+</LinearLayout>

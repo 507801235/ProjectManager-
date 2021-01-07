@@ -1,9 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetInfoActivity">
+    tools:context=".GetInfoActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mid_green">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_avatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/nav_header_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="土间埋"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/account"
+            app:layout_constraintStart_toStartOf="@+id/account" />
+
+        <TextView
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="1010@qq.com"
+            android:textSize="18sp"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/border"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="昵 称 :" />
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:textSize="18sp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="所 任 职 位 :"/>
+
+            <EditText
+                android:id="@+id/et_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="3"
+                android:textSize="18sp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="联 系 方 式 :"/>
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:maxLength="11"
+                android:textSize="18sp"
+                android:inputType="phone" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ProjectBar">
+
+            <TextView
+                style="@style/RegisterTitle"
+                android:text="个 人 简 介 :" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/et_synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/edit_text"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:hint="简单介绍以下自己吧!"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_save"
+            style="@style/Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="保存修改" />
+
+    </LinearLayout>
+
+</LinearLayout>

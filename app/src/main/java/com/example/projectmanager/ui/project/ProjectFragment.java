@@ -17,7 +17,7 @@ import android.widget.ListView;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.projectmanager.ProjectDetailActivity;
+import com.example.projectmanager.activity.project.ProjectDetailActivity;
 import com.example.projectmanager.R;
 import com.example.projectmanager.adapter.MyPagerAdapter;
 import com.example.projectmanager.adapter.ProjectAdapter;
@@ -70,7 +70,7 @@ public class ProjectFragment extends Fragment {
     private void init_myProject(View myProject_view) {
         ListView project_list = myProject_view.findViewById(R.id.list_view);
 
-        Request.clientGet(getActivity(), "project?asManager=yes&asMember=no", new NetCallBack(){
+        Request.clientGet( "project?asManager=yes&asMember=no", new NetCallBack(){
             @Override
             public void onMySuccess(JSONObject result) {
                 System.out.println("project:" + result);
@@ -88,14 +88,14 @@ public class ProjectFragment extends Fragment {
                         bundle.putSerializable("project", project);
 
                         Intent intent = new Intent(getActivity(), ProjectDetailActivity.class);
-                        intent.putExtras(bundle);
+                        intent.putExtras(bundle);   //把project信息传给ProjectDetailActivity
                         startActivity(intent);
                     }
                 });
             }
 
             @Override
-            public void onMyFailure(String error) {
+            public void onMyFailure(String error, String data) {
 
             }
         });
@@ -104,7 +104,7 @@ public class ProjectFragment extends Fragment {
     private void init_otherProject(View otherProject_view) {
         ListView project_list = otherProject_view.findViewById(R.id.list_view);
 
-        Request.clientGet(getActivity(), "project?asManager=no", new NetCallBack(){
+        Request.clientGet("project?asManager=no", new NetCallBack(){
             @Override
             public void onMySuccess(JSONObject result) {
                 System.out.println("project:" + result);
@@ -127,7 +127,7 @@ public class ProjectFragment extends Fragment {
             }
 
             @Override
-            public void onMyFailure(String error) {
+            public void onMyFailure(String error, String data) {
 
             }
         });

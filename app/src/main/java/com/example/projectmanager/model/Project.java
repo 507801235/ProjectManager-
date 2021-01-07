@@ -6,6 +6,7 @@ public class Project implements Serializable {
     private String project_uid;
     private String projectName;
     private Integer manager_uid;
+    private String managerName;
     private String managerNickName;
     private String projectSynopsis;
     private String projectPlan;
@@ -52,6 +53,14 @@ public class Project implements Serializable {
 
     public void setManager_uid(Integer manager_uid) {
         this.manager_uid = manager_uid;
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
     public String getProjectSynopsis() {
